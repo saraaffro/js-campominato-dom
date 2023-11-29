@@ -17,12 +17,14 @@ const gridElement = document.getElementById("grid");
 const playButton = document.getElementById("play");
 
 // creazione array bombe
-const myBombArray = genArrayNumRandom(1, 100, 16);
+const myBombArray = genArrayNumRandom (1, 100, 16);
 console.log(myBombArray);
+
 
 // creo ciclo per griglia
 for (let i = 1; i <= 100; i++){
-
+    let nCiclo = i;
+    
     // comparsa griglia al click del playbutton
     playButton.addEventListener("click",
 
@@ -31,13 +33,18 @@ for (let i = 1; i <= 100; i++){
 
             gridElement.append(myElement);
             myElement.append(i);
-            
-
+    
             // cambio colore dei quadrati al click
             myElement.addEventListener("click",
                 function(){
-                    myElement.classList.add("clicked");
-                    console.log(i);
+                    if(myBombArray.includes(i)) {
+                        myElement.classList.add("bomba");
+                        alert('Hai cliccato su una bomba! Game over.');
+                        gridElement.innerHTML = "";
+                      } else {
+                        myElement.classList.add("clicked");
+                        console.log('Hai cliccato sulla cella numero:', i);
+                      }
                 }
             );
         }
@@ -55,10 +62,10 @@ function createMyelement(tagtype, classname){
 }
 
 // ciclo array casuale bombe
-function genArrayNumRandom (minNum, maxNum, arraylength){
+function genArrayNumRandom (minNum, maxNum, lunghezzaArr){
     const arrayToGen = [];
 
-    while (arrayToGen.length < arraylength) {
+    while (arrayToGen.length < lunghezzaArr) {
         let newNumberRandom = genNumRandom(minNum, maxNum);
 
         if (!arrayToGen.includes(newNumberRandom)){
@@ -71,4 +78,9 @@ function genArrayNumRandom (minNum, maxNum, arraylength){
 // genera numeri casuali (min, max)
 function genNumRandom(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function handleCellClick(cellNum) {
+    const cell = document.getElementsByClassName('cell')[cellNum - 1];
+    
 }

@@ -56,7 +56,10 @@ main{
 
 .clicked{
     background-color: lightblue;
-    
+}
+
+.bomba{
+    background-color: red;
 }
 
 footer{
