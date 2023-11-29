@@ -24,7 +24,7 @@ const playButton = document.getElementById("play");
 const myBombArray = genArrayNumRandom (1, 100, 16);
 console.log(myBombArray);
 
-// numero celle cliccate
+// punteggio
 let score = 0;
 
 
@@ -47,12 +47,17 @@ for (let i = 1; i <= 100; i++){
                         myElement.classList.add("bomba");
                         alert(`Hai cliccato su una bomba! Game over. Il tuo punteggio è: ${score}`);
                         gridElement.innerHTML = "";
-                      } else {
+                    } else {
                         myElement.classList.add("clicked");
                         console.log('Hai cliccato sulla cella numero:', i);
                         score++;
                         console.log("punteggio: ", score);
-                      }
+                    }
+
+                    if(score === 84){
+                        alert(`Hai vinto! Hai fatto il punteggio massimo di ${score}`);
+                        gridElement.innerHTML = "";
+                    }
                 }
             );
         }
