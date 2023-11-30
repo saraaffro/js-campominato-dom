@@ -101,7 +101,7 @@ if(gameLevels.value === "1"){
                             console.log("punteggio: ", score);
                         }
 
-                        if(score === 84){
+                        if(score === 65){
                             alert(`Hai vinto! Hai fatto il punteggio massimo di ${score}`);
                             gridElement.innerHTML = "";
                         }
@@ -141,7 +141,7 @@ if(gameLevels.value === "1"){
                             console.log("punteggio: ", score);
                         }
 
-                        if(score === 84){
+                        if(score === 33){
                             alert(`Hai vinto! Hai fatto il punteggio massimo di ${score}`);
                             gridElement.innerHTML = "";
                         }

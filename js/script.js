@@ -21,7 +21,7 @@ const gridElement = document.getElementById("grid");
 const playButton = document.getElementById("play");
 
 // creazione array bombe
-const myBombArray = genArrayNumRandom (1, 100, 16);
+const myBombArray = genArrayNumRandom(1, 100, 16);
 console.log(myBombArray);
 
 // punteggio
